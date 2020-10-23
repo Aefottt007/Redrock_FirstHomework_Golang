@@ -28,7 +28,7 @@ func level2() {
 		fmt.Print("计算机系统，请输入数字：")
 		calculate()
 		fmt.Print("输入q退出,输入任意键继续计算。")
-		fmt.Scanf("%c", &q)
+		fmt.Scanf("%c\n", &q)
 		if q == 'q' {
 			print("欢迎下次光临")
 			break
