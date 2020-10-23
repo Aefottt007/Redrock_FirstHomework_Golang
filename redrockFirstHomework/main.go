@@ -1,10 +1,14 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math"
+)
 
 func main() {
 	//level1()
-	level2()
+	//level2()
+	level3()
 }
 
 func level1() {
@@ -63,4 +67,25 @@ func calculate() {
 	default:
 		fmt.Print("输入格式错误")
 	}
+}
+
+func level3(){
+
+	fmt.Print("绝对值最小的数为：")
+	arr := []float64{-4,-3,-2.3,-2.1,-1.9}
+	i := binarySearch(arr)
+	fmt.Printf("%f",i)
+}
+func binarySearch(arr []float64) float64{
+	low ,high := 0 ,len(arr)-1
+	var middle int
+	for math.Abs(float64(low-high))>1{
+		middle = (high+low)/2
+		if math.Abs(arr[low])<math.Abs(arr[middle]){
+			high = middle
+		}else{
+			low = middle
+		}
+	}
+	return arr[low]
 }
